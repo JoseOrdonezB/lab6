@@ -13,3 +13,8 @@ Este proyecto es el backend para la aplicación web **La Liga Tracker**, desarro
 - **Docker** – Para ejecución del backend en un contenedor
 
 ## Vistas de frontend
+Frontend funcionando:
+(./assets/actualizar-partido.png)
+(./assets/buscar-partido.png)
+(./assets/crear-partido.png)
+(./assets/listado-partidos.png)
