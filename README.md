@@ -18,3 +18,10 @@ Frontend funcionando:
 ![Buscar Partido](./lab6/assets/buscar-partido.png)
 ![Crear Partido](./lab6/assets/crear-partido.png)
 ![Listado Partidos](./lab6/assets/listado-partidos.png)
+
+## Ejecutar con Docker
+
+- Contruir la imagen con Docker:
+- docker build -t laliga-backend
+- Correr el contenedor en el puerto 8080:
+- docker run -p 8080:8080 laliga-backend
