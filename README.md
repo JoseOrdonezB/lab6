@@ -14,7 +14,7 @@ Este proyecto es el backend para la aplicación web **La Liga Tracker**, desarro
 
 ## Vistas de frontend
 Frontend funcionando:
-![Actualizar Partido](./assets/actualizar-partido.png)
-![Buscar Partido](./assets/buscar-partido.png)
-![Crear Partido](./assets/crear-partido.png)
-![Listado Partidos](./assets/listado-partidos.png)
+![Actualizar Partido](./lab6/assets/actualizar-partido.png)
+![Buscar Partido](./lab6/assets/buscar-partido.png)
+![Crear Partido](./lab6/assets/crear-partido.png)
+![Listado Partidos](./lab6/assets/listado-partidos.png)
