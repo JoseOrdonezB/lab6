@@ -1,0 +1,33 @@
+# Binarios de Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+main
+
+# Archivos de base de datos
+*.db
+
+# Archivos temporales y de sistema
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Archivos generados por herramientas de documentación como swag
+/docs/*
+
+# Archivos del entorno de desarrollo
+.vscode/
+.idea/
+
+# Módulos de Go (si usa vendoring, puede ignorar esto)
+vendor/
+
+# Docker
+**/docker-compose.override.yml
+**/docker-compose.yml
