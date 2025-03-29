@@ -1,0 +1,42 @@
+# Instrucciones para consumir la API de La Liga Tracker
+
+## Endpoints disponibles:
+
+GET /matches
+→ Devuelve todos los partidos.
+
+GET /matches/:id
+→ Devuelve un partido específico por ID.
+
+POST /matches
+→ Crea un nuevo partido.
+→ Body (JSON):
+{
+  "homeTeam": "Barcelona",
+  "awayTeam": "Real Madrid",
+  "matchDate": "2025-04-01"
+}
+
+PUT /matches/:id
+→ Actualiza un partido existente.
+→ Body (JSON):
+{
+  "homeTeam": "Barça",
+  "awayTeam": "Madrid",
+  "matchDate": "2025-04-01"
+}
+
+DELETE /matches/:id
+→ Elimina un partido por ID.
+
+PATCH /matches/:id/goals
+→ Incrementa en 1 el total de goles del partido.
+
+PATCH /matches/:id/yellowcards
+→ Incrementa en 1 el número de tarjetas amarillas.
+
+PATCH /matches/:id/redcards
+→ Incrementa en 1 el número de tarjetas rojas.
+
+PATCH /matches/:id/extratime
+→ Marca que el partido tuvo tiempo extra.

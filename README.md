@@ -1,16 +1,33 @@
-# La Liga Tracker - Backend
+# La Liga Tracker ⚽
 
-Este proyecto es el backend para la aplicación web **La Liga Tracker**, desarrollada como parte del laboratorio de desarrollo backend. Permite gestionar partidos de La Liga y se conecta con un frontend ya existente.
+Aplicación backend escrita en Go para gestionar partidos de fútbol. Permite crear, consultar, actualizar y eliminar partidos, así como registrar eventos clave como goles, tarjetas y tiempo extra.
 
----
+## 🛠️ Tecnologías
 
-## 🚀 Tecnologías usadas
+- [Go](https://golang.org/)
+- [Gin](https://github.com/gin-gonic/gin)
+- [GORM](https://gorm.io/)
+- [SQLite](https://www.sqlite.org/)
+- [Swagger](https://swagger.io/) para documentación
+- Docker
 
-- **Go (Golang)** – Backend REST API
-- **Gin** – Framework web para Go
-- **GORM** – ORM para manejar base de datos
-- **SQLite** – Base de datos ligera
-- **Docker** – Para ejecución del backend en un contenedor
+## 🚀 Endpoints principales
+
+| Método | Endpoint                        | Descripción                         |
+|--------|----------------------------------|-------------------------------------|
+| GET    | `/api/matches`                  | Obtener todos los partidos          |
+| GET    | `/api/matches/:id`              | Obtener un partido por ID           |
+| POST   | `/api/matches`                  | Crear un nuevo partido              |
+| PUT    | `/api/matches/:id`              | Actualizar un partido existente     |
+| DELETE | `/api/matches/:id`              | Eliminar un partido                 |
+| PATCH  | `/api/matches/:id/goals`        | Registrar un gol                    |
+| PATCH  | `/api/matches/:id/yellowcards`  | Registrar una tarjeta amarilla      |
+| PATCH  | `/api/matches/:id/redcards`     | Registrar una tarjeta roja          |
+| PATCH  | `/api/matches/:id/extratime`    | Registrar tiempo extra              |
+
+## 📄 Documentación de la API
+La documentación en formato JSON de la API se puede encontrar en el sigueinte directorio:
+lab6/docs/swagger.json
 
 ## Vistas de frontend
 Frontend funcionando:
@@ -19,9 +36,10 @@ Frontend funcionando:
 ![Crear Partido](./assets/crear-partido.png)
 ![Listado Partidos](./assets/listado-partidos.png)
 
-## Ejecutar con Docker
+## 🐳 Docker
 
-- Contruir la imagen con Docker:
-- docker build -t laliga-backend
-- Correr el contenedor en el puerto 8080:
-- docker run -p 8080:8080 laliga-backend
+Para ejecutar la app con Docker:
+
+```bash
+docker build -t laliga-tracker .
+docker run -p 8080:8080 laliga-tracker
