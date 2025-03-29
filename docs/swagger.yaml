@@ -1,0 +1,192 @@
+basePath: /api
+definitions:
+  models.Match:
+    properties:
+      awayTeam:
+        type: string
+      extraTime:
+        type: boolean
+      homeTeam:
+        type: string
+      id:
+        type: integer
+      matchDate:
+        type: string
+      redCards:
+        type: integer
+      totalGoals:
+        type: integer
+      yellowCards:
+        type: integer
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API para gestionar partidos de fútbol
+  title: La Liga Tracker API
+  version: "1.0"
+paths:
+  /matches:
+    get:
+      description: Devuelve la lista completa de partidos
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Match'
+            type: array
+      summary: Obtener todos los partidos
+      tags:
+      - Matches
+    post:
+      consumes:
+      - application/json
+      description: Crea un nuevo partido con la información proporcionada
+      parameters:
+      - description: Datos del partido
+        in: body
+        name: match
+        required: true
+        schema:
+          $ref: '#/definitions/models.Match'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.Match'
+      summary: Crear partido
+      tags:
+      - Matches
+  /matches/{id}:
+    delete:
+      description: Elimina un partido por su ID
+      parameters:
+      - description: ID del partido
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "204":
+          description: No Content
+      summary: Eliminar partido
+      tags:
+      - Matches
+    get:
+      description: Devuelve los datos de un partido específico
+      parameters:
+      - description: ID del partido
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Match'
+      summary: Obtener partido por ID
+      tags:
+      - Matches
+    put:
+      consumes:
+      - application/json
+      description: Actualiza los datos de un partido existente
+      parameters:
+      - description: ID del partido
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Nuevos datos
+        in: body
+        name: match
+        required: true
+        schema:
+          $ref: '#/definitions/models.Match'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Match'
+      summary: Actualizar partido
+      tags:
+      - Matches
+  /matches/{id}/extratime:
+    patch:
+      description: Marca que el partido tuvo tiempo extra
+      parameters:
+      - description: ID del partido
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Match'
+      summary: Registrar tiempo extra
+      tags:
+      - Matches
+  /matches/{id}/goals:
+    patch:
+      description: Aumenta en 1 el contador de goles totales
+      parameters:
+      - description: ID del partido
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Match'
+      summary: Registrar gol
+      tags:
+      - Matches
+  /matches/{id}/redcards:
+    patch:
+      description: Aumenta en 1 el número de tarjetas rojas del partido
+      parameters:
+      - description: ID del partido
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Match'
+      summary: Registrar tarjeta roja
+      tags:
+      - Matches
+  /matches/{id}/yellowcards:
+    patch:
+      description: Aumenta en 1 el número de tarjetas amarillas del partido
+      parameters:
+      - description: ID del partido
+        in: path
+        name: id
+        required: true
+        type: integer
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Match'
+      summary: Registrar tarjeta amarilla
+      tags:
+      - Matches
+swagger: "2.0"

@@ -18,9 +18,6 @@ main
 .DS_Store
 Thumbs.db
 
-# Archivos generados por herramientas de documentación como swag
-/docs/*
-
 # Archivos del entorno de desarrollo
 .vscode/
 .idea/
